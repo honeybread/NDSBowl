@@ -1,4 +1,5 @@
 import scipy as sp
+import scipy.misc as misc
 import os
 from skimage import io
 
@@ -25,8 +26,8 @@ class Image_Preprocess(object):
             all_images = list(os.walk(self.dir_name + '/'+folder))
             for image in all_images[0][2]:
                 image_nparray = io.imread(self.dir_name + '/'+folder+'/'+image)
-                image_resized = sp.misc.imresize(image_nparray,resize_shape)
-                sp.misc.imsave(self.dir_name_resized+'/'+folder+'/'+image, image_resized)
+                image_resized = misc.imresize(image_nparray,resize_shape)
+                misc.imsave(self.dir_name_resized+'/'+folder+'/'+image, image_resized)
                 
 
 if __name__ == "__main__":
