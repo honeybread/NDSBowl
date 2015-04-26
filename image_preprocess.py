@@ -12,6 +12,7 @@ class Image_Preprocess(object):
 
     def image_resize(self, resize_shape = (100, 100)):
         ''' method to resize images to resize_shape'''
+        
         if not os.path.exists(self.dir_name_resized):
             os.mkdir(self.dir_name_resized)
             
@@ -31,6 +32,7 @@ class Image_Preprocess(object):
                 
     def image_rotate(self, rotation_angles = (90, 180, 270)):
         '''method to rotate images'''
+        
         if not os.path.exists(self.dir_name_resized):
             print "Error: Resize Images and Try rotating on top of it"
         
